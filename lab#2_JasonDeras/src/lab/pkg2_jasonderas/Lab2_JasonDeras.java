@@ -76,7 +76,7 @@ public class Lab2_JasonDeras {
                                 }//If que valida si la casa comprada
                                 System.out.print("Ingrese nombre del ingeniro a cargo de la casa: ");
                                 String ing = l.next();
-                                casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño));
+                                casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño,ing));
                                 System.out.println("");
                                 System.out.println("");
                                 break;
