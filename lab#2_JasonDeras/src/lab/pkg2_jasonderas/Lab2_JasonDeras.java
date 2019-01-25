@@ -8,6 +8,7 @@ public class Lab2_JasonDeras {
     static String dueño;
     static String estado;
     static String ing;
+    static String estado2;
 
     public static void main(String[] args) {
         ArrayList casas = new ArrayList();
@@ -159,6 +160,25 @@ public class Lab2_JasonDeras {
                                 break;
                         }//Fin del swrich del registro de casas}
                 }//Fin del switch de llista de la casa
+                if (op2 == 2) {
+                    System.out.print("Inrese posicion a modificar de estado");
+                    int pos = l.nextInt();
+                    System.out.print("Ingrese el estado actual (puede usar _ como espacios): ");
+                    estado = l.next();
+                    System.out.print("Ingrese el estado actual modificar (puede usar _ como espacios): ");
+                    estado2 = l.next();
+                    if (estado.equalsIgnoreCase("en_espera_de_demolicion") || estado2.equalsIgnoreCase("en_espera_de_demolicion")) {
+                        System.out.println("Las casas es este estado no se pueden modificar\n");
+                    } else if (estado.equalsIgnoreCase("lista") && estado2.equalsIgnoreCase("estado_espera_demolicion")) {
+                        ((Casas) casas.get(pos)).setestado(estado2);
+                    } else if (estado.equalsIgnoreCase("construcion_en_espera") && estado2.equalsIgnoreCase("en_construccion")) {
+                        ((Casas) casas.get(pos)).setestado(estado2);
+                    } else if (estado.equalsIgnoreCase("construccion") && estado2.equalsIgnoreCase("construccion_en_espera") || estado.equalsIgnoreCase("espera_en_construccion") && estado2.equalsIgnoreCase("lista")) {
+                        ((Casas) casas.get(pos)).setestado(estado2);
+                    } else if (estado.equalsIgnoreCase("demoler")) {
+                        casas.remove(op);
+                    }//Fin del if del manejo de cada estado
+                }//If de los estaods
                 if (op2 == 3) {
                     System.exit(0);
                 }
