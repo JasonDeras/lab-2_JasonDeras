@@ -1,5 +1,6 @@
 package lab.pkg2_jasonderas;
 
+import java.awt.Color;
 import java.util.*;
 
 public class Lab2_JasonDeras {
@@ -50,8 +51,34 @@ public class Lab2_JasonDeras {
                         op2 = l.nextInt();
                         switch (op2) {
                             case 1:
+                                System.out.print("Ingrese numero de casa: ");
+                                int cas = l.nextInt();
+                                System.out.print("Ingrese numero de bloque");
+                                int bloque = l.nextInt();
+                                System.out.print("Ingrese ancho:");
+                                int ancho = l.nextInt();
+                                System.out.print("Ingrese largo: ");
+                                int largo = l.nextInt();
+                                System.out.print("Ingrese estado: ");
+                                String estado = l.next();
+                                System.out.print("Ingrese cantidad de pisos");
+                                int pisos = l.nextInt();
+                                System.out.print("Ingrese cantidad de baños");
+                                int baños = l.nextInt();
+                                System.out.print("Ingrese cantidad de cuartos");
+                                int cuartos = l.nextInt();
+                                System.out.print("Ingrese dueño en caso que la casa este comprada");
+                                String dueño = l.next();
+                                casas.add(new Casas());
                                 break;
                             case 2:
+                                String s = "";
+                                for (Object t : casas) {
+                                    if (t instanceof Casas) {
+                                        s += casas.indexOf(t) + "- " + t + "\n";
+                                    }
+                                }//Fin del for que lista las casas
+                                System.out.println("");
                                 break;
                             case 3:
                                 System.out.print("Ingrese posicion de casa a eliminar: ");
