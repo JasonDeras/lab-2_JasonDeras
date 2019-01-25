@@ -8,6 +8,10 @@ public class Lab2_JasonDeras {
 
     public static void main(String[] args) {
         ArrayList casas = new ArrayList();
+        ArrayList casas_listas = new ArrayList();
+        ArrayList casas_construccion = new ArrayList();
+        ArrayList casas_construccion_en_espera = new ArrayList();
+        ArrayList casas_espera_de_demolicion = new ArrayList();
         int contra = 0;
         String usuario = "";
         int op2 = 0;
@@ -72,11 +76,11 @@ public class Lab2_JasonDeras {
                                     System.out.print("Ingrese dueño en caso que la casa este comprada: ");
                                     dueño = l.next();
                                 } else {
-                                    dueño = "";
+                                    dueño = "No tiene dueño";
                                 }//If que valida si la casa comprada
                                 System.out.print("Ingrese nombre del ingeniro a cargo de la casa: ");
                                 String ing = l.next();
-                                casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño,ing));
+                                casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño, ing));
                                 System.out.println("");
                                 System.out.println("");
                                 break;
