@@ -1,6 +1,5 @@
 package lab.pkg2_jasonderas;
 
-import java.awt.Color;
 import java.util.*;
 
 public class Lab2_JasonDeras {
@@ -61,28 +60,30 @@ public class Lab2_JasonDeras {
                                 int largo = l.nextInt();
                                 System.out.print("Ingrese estado: ");
                                 String estado = l.next();
-                                System.out.print("Ingrese cantidad de pisos");
+                                System.out.print("Ingrese cantidad de pisos: ");
                                 int pisos = l.nextInt();
-                                System.out.print("Ingrese cantidad de baños");
+                                System.out.print("Ingrese cantidad de baños: ");
                                 int baños = l.nextInt();
-                                System.out.print("Ingrese cantidad de cuartos");
+                                System.out.print("Ingrese cantidad de cuartos: ");
                                 int cuartos = l.nextInt();
-                                System.out.print("Ingrese dueño en caso que la casa este comprada");
+                                System.out.print("Ingrese dueño en caso que la casa este comprada: ");
                                 String dueño = l.next();
-                                casas.add(new Casas());
+                                casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño));
                                 break;
                             case 2:
                                 String s = "";
                                 for (Object t : casas) {
-                                    if (t instanceof Casas) {
-                                        s += casas.indexOf(t) + "- " + t + "\n";
-                                    }
+                                    s += casas.indexOf(t) + "- " + t + "\n";
                                 }//Fin del for que lista las casas
                                 System.out.println("");
                                 break;
                             case 3:
-                                System.out.print("Ingrese posicion de casa a eliminar: ");
+                                System.out.println("Ingrese posicion a modificar: ");
                                 int pos = l.nextInt();
+                                break;
+                            case 4:
+                                System.out.print("Ingrese posicion de casa a eliminar: ");
+                                pos = l.nextInt();
                                 casas.remove(pos);
                                 break;
                         }//Fin del swrich del registro de casas}
