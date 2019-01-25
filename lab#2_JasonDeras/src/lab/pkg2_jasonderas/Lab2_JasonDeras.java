@@ -82,11 +82,19 @@ public class Lab2_JasonDeras {
                                 if (estado.equalsIgnoreCase("lista")) {
                                     casas_listas.add(1);
                                 } else if (estado.equalsIgnoreCase("construccion")) {
-                                    casas_construccion.add(1);
+                                    if (casas_construccion.size() == 4) {
+                                        System.out.println("Ya no se pueden poner mas casas en estado de construccion");
+                                    } else {
+                                        casas_construccion.add(1);
+                                    }
                                 } else if (estado.equalsIgnoreCase("construccion_es_espera")) {
                                     casas_construccion_en_espera.add(1);
                                 } else if (estado.equalsIgnoreCase("espera_en_demolicion")) {
-                                    casas_espera_de_demolicion.add(1);
+                                    if (casas_espera_de_demolicion.size() == 2) {
+                                        System.out.println("Ya no se puede agregar mas casa en estado de espera de demolicion");
+                                    } else {
+                                        casas_espera_de_demolicion.add(1);
+                                    }
                                 } else {
                                     System.out.println("Esatado de casa no valido\n");
                                 }//Fin del if que valida y agrega el estado de cada casa
@@ -127,7 +135,7 @@ public class Lab2_JasonDeras {
                                     dueño = "No tiene dueño";
                                 }//If que valida si la casa comprada
                                 System.out.println("Ingrese el ingeniero responsable de la obra: ");
-                                ing=l.next();
+                                ing = l.next();
                                 if (casas.get(pos) instanceof Casas) {
                                     ((Casas) casas.get(pos)).setlargo(largo);
                                     ((Casas) casas.get(pos)).setDueño(dueño);
