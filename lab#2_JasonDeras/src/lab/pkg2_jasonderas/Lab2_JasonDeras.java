@@ -7,7 +7,7 @@ public class Lab2_JasonDeras {
     static Scanner l = new Scanner(System.in);
     static String dueño;
     static String estado;
-    static String ing ;
+    static String ing;
 
     public static void main(String[] args) {
         ArrayList casas = new ArrayList();
@@ -106,6 +106,39 @@ public class Lab2_JasonDeras {
                             case 3:
                                 System.out.println("Ingrese posicion a modificar: ");
                                 int pos = l.nextInt();
+                                System.out.print("Ingrese numero de casa: ");
+                                cas = l.nextInt();
+                                System.out.print("Ingrese numero de bloque");
+                                bloque = l.nextInt();
+                                System.out.print("Ingrese ancho:");
+                                ancho = l.nextInt();
+                                System.out.print("Ingrese largo: ");
+                                largo = l.nextInt();
+                                System.out.print("Ingrese cantidad de pisos: ");
+                                pisos = l.nextInt();
+                                System.out.print("Ingrese cantidad de baños: ");
+                                baños = l.nextInt();
+                                System.out.print("Ingrese cantidad de cuartos: ");
+                                cuartos = l.nextInt();
+                                if (estado.equalsIgnoreCase("vendida")) {
+                                    System.out.print("Ingrese dueño en caso que la casa este comprada: ");
+                                    dueño = l.next();
+                                } else {
+                                    dueño = "No tiene dueño";
+                                }//If que valida si la casa comprada
+                                System.out.println("Ingrese el ingeniero responsable de la obra: ");
+                                ing=l.next();
+                                if (casas.get(pos) instanceof Casas) {
+                                    ((Casas) casas.get(pos)).setlargo(largo);
+                                    ((Casas) casas.get(pos)).setDueño(dueño);
+                                    ((Casas) casas.get(pos)).setNum_c(cas);
+                                    ((Casas) casas.get(pos)).setbaños(baños);
+                                    ((Casas) casas.get(pos)).setIng(ing);
+                                    ((Casas) casas.get(pos)).setbloque(bloque);
+                                    ((Casas) casas.get(pos)).setcuartos(cuartos);
+                                    ((Casas) casas.get(pos)).setpisos(pisos);
+                                    ((Casas) casas.get(pos)).setancho(ancho);
+                                }//Fin del if que modicica los aspectos de cada casa
                                 System.out.println("");
                                 System.out.println("");
                                 break;

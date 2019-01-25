@@ -49,7 +49,7 @@ public class Casas {
         return bloque;
     }//Mutaodr que get el numero de bloque de la casa
 
-    public void Ancho(int ancho) {
+    public void setancho(int ancho) {
         this.ancho = ancho;
     }//Mutador set del ancho de casa
 
