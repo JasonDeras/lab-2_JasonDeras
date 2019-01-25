@@ -5,6 +5,9 @@ import java.util.*;
 public class Lab2_JasonDeras {
 
     static Scanner l = new Scanner(System.in);
+    static String dueño;
+    static String estado;
+    static String ing ;
 
     public static void main(String[] args) {
         ArrayList casas = new ArrayList();
@@ -15,8 +18,6 @@ public class Lab2_JasonDeras {
         int contra = 0;
         String usuario = "";
         int op2 = 0;
-        String dueño;
-        String estado;
         System.out.println("1- Registro de casas");
         System.out.println("2- Manejo de estados");
         System.out.println("3- Login");
@@ -64,7 +65,7 @@ public class Lab2_JasonDeras {
                                 int ancho = l.nextInt();
                                 System.out.print("Ingrese largo: ");
                                 int largo = l.nextInt();
-                                System.out.print("Ingrese estado: ");
+                                System.out.print("Ingrese estado(puede usar _ para simular un espacio): ");
                                 estado = l.next();
                                 System.out.print("Ingrese cantidad de pisos: ");
                                 int pisos = l.nextInt();
@@ -78,8 +79,19 @@ public class Lab2_JasonDeras {
                                 } else {
                                     dueño = "No tiene dueño";
                                 }//If que valida si la casa comprada
-                                System.out.print("Ingrese nombre del ingeniro a cargo de la casa: ");
-                                String ing = l.next();
+                                if (estado.equalsIgnoreCase("lista")) {
+                                    casas_listas.add(1);
+                                } else if (estado.equalsIgnoreCase("construccion")) {
+                                    casas_construccion.add(1);
+                                } else if (estado.equalsIgnoreCase("construccion_es_espera")) {
+                                    casas_construccion_en_espera.add(1);
+                                } else if (estado.equalsIgnoreCase("espera_en_demolicion")) {
+                                    casas_espera_de_demolicion.add(1);
+                                } else {
+                                    System.out.println("Esatado de casa no valido\n");
+                                }//Fin del if que valida y agrega el estado de cada casa
+                                System.out.print("Ingrese nombre del ingeniero a cargo de la casa: ");
+                                ing = l.next();
                                 casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño, ing));
                                 System.out.println("");
                                 System.out.println("");
