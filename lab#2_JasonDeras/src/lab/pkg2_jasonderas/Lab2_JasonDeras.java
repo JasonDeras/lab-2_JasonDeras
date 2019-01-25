@@ -11,6 +11,7 @@ public class Lab2_JasonDeras {
         int contra = 0;
         String usuario = "";
         int op2 = 0;
+        String dueño;
         System.out.println("1- Registro de casas");
         System.out.println("2- Manejo de estados");
         System.out.println("3- Login");
@@ -45,7 +46,7 @@ public class Lab2_JasonDeras {
                         System.out.println("1.-Crear casa");
                         System.out.println("2.-Listar casa");
                         System.out.println("3.-Modificar casa");
-                        System.out.println("4.-Eliminar casa");
+                        System.out.println("4.-Eliminar casa\n");
                         System.out.print("Ingrese una opcion: ");
                         op2 = l.nextInt();
                         switch (op2) {
@@ -66,16 +67,18 @@ public class Lab2_JasonDeras {
                                 int baños = l.nextInt();
                                 System.out.print("Ingrese cantidad de cuartos: ");
                                 int cuartos = l.nextInt();
-                                System.out.print("Ingrese dueño en caso que la casa este comprada: ");
-                                String dueño = l.next();
+                                if (estado.equalsIgnoreCase("vendida")) {
+                                    System.out.print("Ingrese dueño en caso que la casa este comprada: ");
+                                    dueño = l.next();
+                                } else {
+                                    dueño = "";
+                                }//If que valida si la casa comprada
                                 casas.add(new Casas(cas, bloque, ancho, largo, estado, pisos, baños, cuartos, dueño));
                                 break;
                             case 2:
-                                String s = "";
-                                for (Object t : casas) {
-                                    s += casas.indexOf(t) + "- " + t + "\n";
-                                }//Fin del for que lista las casas
-                                System.out.println("");
+                                for (int i = 0; i < casas.size(); i++) {
+                                    System.out.println(casas.get(i));
+                                }//Fin del for que imprime la lista de las casas
                                 break;
                             case 3:
                                 System.out.println("Ingrese posicion a modificar: ");
