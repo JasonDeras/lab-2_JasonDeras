@@ -4,21 +4,23 @@ import java.awt.Color;
 
 public class Casas {
 
-    int casa;
-    int bloque;
-    Color c = Color.white;
-    int ancho;
-    int largo;
-    String estado;
-    int pisos;
-    int baños;
-    int cuartos;
-    String dueño;
+    //Atributos de la clase de casas
+    private int casa;
+    private int bloque;
+    private Color c = Color.white;
+    private int ancho;
+    private int largo;
+    private String estado;
+    private int pisos;
+    private int baños;
+    private int cuartos;
+    private String dueño;
+    private String ing;
 
     public Casas() {
     }//Constructor vacio
 
-    public Casas(int n_c, int n_b, int ancho, int largo, String estado, int pisos, int baños, int cuartos, String dueño) {
+    public Casas(int n_c, int n_b, int ancho, int largo, String estado, int pisos, int baños, int cuartos, String dueño, String inge) {
         casa = n_c;
         bloque = n_b;
         this.ancho = ancho;
@@ -28,6 +30,7 @@ public class Casas {
         this.baños = baños;
         this.cuartos = cuartos;
         this.dueño = dueño;
+        ing = inge;
     }//Constructro con los parametros
 
     public void setNum_c(int n_c) {
@@ -102,6 +105,14 @@ public class Casas {
         return dueño;
     }//Fin del mutador get del dueño de la casa si esta venidad
 
+    public void setIng(String inge) {
+        ing = inge;
+    }//Fin del mutaodr set del ing de la casa
+
+    public String getIng() {
+        return ing;
+    }//Fin del mutador set del ingeniero de la casa
+
     public String toString() {
         return "Numero de casa= " + casa
                 + " Numero de bloque= " + bloque
@@ -111,6 +122,7 @@ public class Casas {
                 + " Numero de pisos= " + pisos
                 + " Numero de baños= " + baños
                 + " Numero de cuartos= " + cuartos
-                + " Dueño= " + dueño;
+                + " Dueño= " + dueño
+                + " Ingeniero acarogo de la casa= " + ing;
     }//Fin del metodo to String
 }//Fin de la clase de las casas
